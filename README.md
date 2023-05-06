@@ -28,8 +28,8 @@ Technologies used:
 - Create new droplet on DigitalOcean
 - Installing Nexus
   - Step 1: Install openjdx and net-tools
-    apt update
-    apt install openjdk-8-jre-headless
+    -apt update
+    -apt install openjdk-8-jre-headless
     apt install net-tools
     
   - Step 2: Download and untar nexus files
