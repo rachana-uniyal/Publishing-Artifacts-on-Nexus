@@ -84,7 +84,7 @@ Technologies used:
     assign the role nx-java to user rachana
     
    
-#### Java Gradle Project: Build Jar & Upload to Nexus
+### Java Gradle Project: Build Jar & Upload to Nexus
 
  - Step 1: In ‘build.gradle’ file add following lines.
 
@@ -139,7 +139,54 @@ Technologies used:
  - Step 5: Publish the artifacts to nexus using command : ./gradlew publish
  
 
-#### Java Maven Project: Build Jar & Upload to Nexus
+### Java Maven Project: Build Jar & Upload to Nexus
+
+ - Step 1: In ‘pom.xml’ file - add code for maven-deploy-plugin.
+
+ - Step 2: Provide repo address:
+
+	<distributionManagement>
+	
+	<snapshotRepository>
+		
+	<id>nexus-snapshots</id>
+		
+	<url>[http://64.227.152.141:8081/repository/maven-snapshots/](http://64.227.152.141:8081/repository/maven-snapshots/)</url>
+		
+	</snapshotRepository>
+	
+	</distributionManagement>
+
+ - Step 3: Add Nexus user credentials:
+
+   Inside root folder/.m2  folder create file settings.xml and following code there.
+
+   <settings>
+	
+   <servers>
+	   
+   <server>
+	   
+   <id>nexus-snapshots</id>
+	   
+   <username>rachana</username>
+	   
+   <password>rc1234</password>
+	   
+   </server>
+	   
+   </servers>
+	
+   </settings>
+
+
+ - Step 4: Build project
+
+   mvn package
+   
+ - Step 5: Deploy Artifact
+
+   mvn deploy
     
  
 
